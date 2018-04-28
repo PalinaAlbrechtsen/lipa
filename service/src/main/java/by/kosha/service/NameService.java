@@ -9,7 +9,7 @@ public final class NameService {
 
     private static final NameService INSTANCE = new NameService();
 
-    public Name getName(){
+    public Name getName() {
         return new Name("Martcipan");
     }
 
