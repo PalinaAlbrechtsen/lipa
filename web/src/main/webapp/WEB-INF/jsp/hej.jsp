@@ -13,7 +13,7 @@
 </head>
 <body>
     <h2>
-       My name is ${requestScope.name.name}
+       I'm from ${requestScope.name}.
     </h2>
 </body>
 </html>
