@@ -1,7 +1,6 @@
 package by.kosha.servlet;
 
 import by.kosha.entity.Country;
-import by.kosha.entity.Subscriber;
 import by.kosha.service.CountryService;
 
 import javax.servlet.ServletException;
