@@ -1,6 +1,7 @@
 package by.kosha.servlet;
 
-import by.kosha.service.NameService;
+import by.kosha.entity.Country;
+import by.kosha.service.CountryService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,11 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/hej")
-public class NameServlet extends HttpServlet {
+public class CountryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("name", NameService.getInstance().getName());
+        Country country = CountryService.getInstance().getById(1L);
+        req.setAttribute("name", country.getName());
         getServletContext()
                 .getRequestDispatcher("/WEB-INF/jsp/hej.jsp")
                 .forward(req, resp);
