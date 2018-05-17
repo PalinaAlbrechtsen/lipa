@@ -2,9 +2,9 @@ package by.kosha.entity;
 
 import org.junit.Test;
 
-public class CityTest extends SessionBaseClass<City> {
+public class CityTest extends SessionBase {
 
-    City city = new City("Copenhagen");
+    private City city = new City("Copenhagen");
 
     @Test
     public void checkSavingCity() {

@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @ToString
@@ -20,10 +20,10 @@ import java.util.Date;
 @Getter
 @Setter
 @Table(name = "purchase", schema = "max_schema")
-public class Purchase extends IdBaseClass<Long> {
+public class Purchase extends IdBase<Long> {
 
     @Column(name = "date", nullable = false)
-    private Date date;
+    private LocalDate date;
 
     @ManyToOne
     @JoinColumn(name = "subscriber_id")
@@ -33,7 +33,7 @@ public class Purchase extends IdBaseClass<Long> {
     @JoinColumn(name = "program_id")
     private Program program;
 
-    public Purchase(Date date) {
+    public Purchase(LocalDate date) {
         this.date = date;
     }
 }

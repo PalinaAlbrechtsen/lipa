@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Setter
 @ToString
 @Table(name = "subtopic", schema = "max_schema")
-public class Subtopic extends IdBaseClass<Long> {
+public class Subtopic extends IdBase<Long> {
 
     @Column(name = "name", unique = true, nullable = false)
     private String name;

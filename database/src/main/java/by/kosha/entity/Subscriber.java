@@ -14,8 +14,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -25,16 +25,16 @@ import java.util.List;
 @Setter
 @ToString
 @Table(name = "subscriber", schema = "max_schema")
-public class Subscriber extends IdBaseClass<Long> {
+public class Subscriber extends IdBase<Long> {
 
-    @OneToOne
+    @OneToOne(mappedBy = "subscriber")
     private User user;
 
     @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "birth_date", nullable = false)
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name = "gender", nullable = false)
     @Enumerated(EnumType.STRING)
@@ -49,7 +49,7 @@ public class Subscriber extends IdBaseClass<Long> {
     @OneToMany(mappedBy = "subscriber")
     private List<Param> params = new ArrayList<>();
 
-    public Subscriber(String name, Date dateOfBirth, Gender gender, Address address) {
+    public Subscriber(String name, LocalDate dateOfBirth, Gender gender, Address address) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;

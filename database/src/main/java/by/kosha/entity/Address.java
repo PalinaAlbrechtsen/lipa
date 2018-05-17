@@ -18,8 +18,8 @@ import javax.persistence.Embeddable;
 public class Address {
 
     @Column(name = "country_id")
-    private String country;
+    private Long countryId;
 
     @Column(name = "city_id")
-    private String city;
+    private Long cityId;
 }

@@ -1,20 +1,15 @@
 package by.kosha.entity;
 
-import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CountryTest extends SessionBaseClass<Country> {
+public class CountryTest extends SessionBase {
 
-    Country savingCountry = new Country("Belarus");
+    private Country savingCountry = new Country("Belarus");
 
     @Before
     public void clean() {
-        try (Session session = FACTORY.openSession()) {
-            session.beginTransaction();
-            session.createQuery("delete from Country ").executeUpdate();
-            session.getTransaction().commit();
-        }
+        cleanBefore("delete from Country ");
     }
 
     @Test

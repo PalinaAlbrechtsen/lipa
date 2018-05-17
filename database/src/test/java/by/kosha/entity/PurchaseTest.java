@@ -1,27 +1,22 @@
 package by.kosha.entity;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-public class PurchaseTest {
+public class PurchaseTest extends SessionBase {
 
-    private static final SessionFactory FACTORY = new Configuration().configure().buildSessionFactory();
-
-    Subscriber subscriber = new Subscriber("Martsipan",
-            Date.valueOf(LocalDate.now()),
+    private Subscriber subscriber = new Subscriber("Martsipan",
+            LocalDate.now(),
             Gender.MALE,
-            new Address("Belarus", "Minsk"));
-    Program program = new Program("Blow mind", new BigDecimal("20.00"), "The best program");
-    Purchase purchase = new Purchase(Date.valueOf(LocalDate.now()), subscriber, program);
+            new Address(1L, 1L));
+    private Program program = new Program("Blow mind", new BigDecimal("20.00"), "The best program");
+    private Purchase purchase = new Purchase(LocalDate.now(), subscriber, program);
 
     @Before
     public void clean() {
@@ -35,12 +30,8 @@ public class PurchaseTest {
     }
 
     @Test
-    public void testSaving() {
-        try (Session session = FACTORY.openSession()) {
-            session.beginTransaction();
-            Arrays.asList(subscriber, program, purchase).forEach(session::save);
-            session.getTransaction().commit();
-        }
+    public void savingTest() {
+        checkSaving(subscriber, program, purchase);
     }
 
     @Test

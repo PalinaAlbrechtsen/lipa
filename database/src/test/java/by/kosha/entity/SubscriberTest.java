@@ -4,15 +4,14 @@ import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
-public class SubscriberTest extends SessionBaseClass<Subscriber> {
+public class SubscriberTest extends SessionBase {
 
-    Subscriber subscriber = new Subscriber("Martsipan",
-            Date.valueOf(LocalDate.now()),
+    private Subscriber subscriber = new Subscriber("Martsipan",
+            LocalDate.now(),
             Gender.MALE,
-            new Address("Belarus", "Minsk"));
+            new Address(1L, 1L));
 
     @Before
     public void clean() {

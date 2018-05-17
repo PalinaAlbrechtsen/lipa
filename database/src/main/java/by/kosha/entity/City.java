@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Entity
 @ToString
 @Table(name = "city", schema = "max_schema")
-public class City extends IdBaseClass<Long> {
+public class City extends IdBase<Long> {
 
     @Column(name = "name", nullable = false)
     private String name;

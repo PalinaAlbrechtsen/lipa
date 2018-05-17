@@ -1,20 +1,15 @@
 package by.kosha.entity;
 
-import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.Test;
 
-public class RoleTest extends SessionBaseClass<Role> {
+public class RoleTest extends SessionBase {
 
-    Role role = new Role("Admin");
+    private Role role = new Role("Admin");
 
     @Before
     public void clean() {
-        try (Session session = FACTORY.openSession()) {
-            session.beginTransaction();
-            session.createQuery("delete from Role").executeUpdate();
-            session.getTransaction().commit();
-        }
+        cleanBefore("delete from Role");
     }
 
     @Test

@@ -22,7 +22,7 @@ import java.sql.Date;
 @Setter
 @ToString
 @Table(name = "param", schema = "max_schema")
-public class Param extends IdBaseClass<Long> {
+public class Param extends IdBase<Long> {
 
     @ManyToOne
     @JoinColumn(name = "subscriber_id")

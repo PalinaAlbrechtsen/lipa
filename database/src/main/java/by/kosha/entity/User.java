@@ -8,6 +8,7 @@ import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
 @Setter
 @AllArgsConstructor
 @Table(name = "user", schema = "max_schema")
-public class User extends IdBaseClass<Long> {
+public class User extends IdBase<Long> {
 
     @Column(name = "email", unique = true, nullable = false)
     private String email;
@@ -31,6 +32,7 @@ public class User extends IdBaseClass<Long> {
     private Role role;
 
     @OneToOne
+    @JoinColumn(name = "subscriber_id")
     private Subscriber subscriber;
 
     public User(String email, String pass) {

@@ -1,22 +1,17 @@
 package by.kosha.entity;
 
-import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class ParamTest extends SessionBaseClass<Param> {
+public class ParamTest extends SessionBase {
 
-    Param param = new Param(new BigDecimal(59.2));
+    private Param param = new Param(new BigDecimal(59.2));
 
     @Before
     public void clean() {
-        try (Session session = FACTORY.openSession()) {
-            session.beginTransaction();
-            session.createQuery("delete from Param").executeUpdate();
-            session.getTransaction().commit();
-        }
+        cleanBefore("delete from Param");
     }
 
     @Test

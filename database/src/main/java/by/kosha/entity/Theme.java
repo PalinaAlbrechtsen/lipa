@@ -20,7 +20,7 @@ import java.util.Set;
 @Setter
 @ToString
 @Table(name = "theme", schema = "max_schema")
-public class Theme extends IdBaseClass<Integer> {
+public class Theme extends IdBase<Integer> {
 
     @Column(name = "name", unique = true, nullable = false)
     private String name;

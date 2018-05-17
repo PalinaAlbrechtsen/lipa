@@ -1,20 +1,15 @@
 package by.kosha.entity;
 
-import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ThemeTest extends SessionBaseClass<Theme> {
+public class ThemeTest extends SessionBase {
 
-    Theme theme = new Theme("Cardio");
+    private Theme theme = new Theme("Cardio");
 
     @Before
     public void clean() {
-        try (Session session = FACTORY.openSession()) {
-            session.beginTransaction();
-            session.createQuery("delete from Theme").executeUpdate();
-            session.getTransaction().commit();
-        }
+        cleanBefore("delete from Theme");
     }
 
     @Test

@@ -21,7 +21,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "program", schema = "max_schema")
-public class Program extends IdBaseClass<Integer> {
+public class Program extends IdBase<Integer> {
 
     @Column(name = "name", unique = true, nullable = false)
     private String name;
