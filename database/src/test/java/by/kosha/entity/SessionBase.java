@@ -43,13 +43,6 @@ public abstract class SessionBase {
         }
     }
 
-//    public void checkSaving(T entity) {
-//        try (Session session = FACTORY.openSession()) {
-//            Serializable savedEntity = session.save(entity);
-//            assertNotNull("Fail!", savedEntity);
-//        }
-//    }
-
     public <T extends IdBase<?>> void checkSaving(T... entity) {
         try (Session session = FACTORY.openSession()) {
             session.beginTransaction();
