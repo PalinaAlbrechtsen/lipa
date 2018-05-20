@@ -1,6 +1,5 @@
 package by.kosha.dao.implementation;
 
-import by.kosha.dao.SessionBase;
 import by.kosha.dao.logic.PurchaseDao;
 import by.kosha.entity.Purchase;
 import by.kosha.entity.QProgram;

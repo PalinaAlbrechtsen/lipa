@@ -1,6 +1,5 @@
 package by.kosha.dao.implementation;
 
-import by.kosha.dao.SessionBase;
 import by.kosha.dao.logic.GeneralDao;
 import by.kosha.entity.IdBase;
 import org.hibernate.Session;

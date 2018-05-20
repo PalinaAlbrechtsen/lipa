@@ -37,6 +37,7 @@ public class ProgramDaoImplTest {
 
     @Test
     public void testUpdating() {
+        ProgramDaoImpl.getInstance().save(program);
         ProgramDaoImpl.getInstance().update(program);
     }
 }

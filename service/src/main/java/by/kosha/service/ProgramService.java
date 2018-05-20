@@ -14,11 +14,11 @@ public final class ProgramService {
     private static final ProgramService INSTANCE = new ProgramService();
 
     public List<Program> findByAllFieldsWithPagination(String name, String description, BigDecimal minValue, BigDecimal maxValue,
-                                                       int limit, int offset){
+                                                       int limit, int offset) {
         return ProgramDaoImpl.getInstance().findByThreeFields(name, description, minValue, maxValue, limit, offset);
     }
 
-    public List<Program> getAll(){
+    public List<Program> getAll() {
         return ProgramDaoImpl.getInstance().getAll();
     }
 

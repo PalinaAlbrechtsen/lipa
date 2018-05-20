@@ -1,6 +1,5 @@
 package by.kosha.dao.implementation;
 
-import by.kosha.dao.SessionBase;
 import by.kosha.dao.logic.SubtopicDao;
 import by.kosha.entity.QSubtopic;
 import by.kosha.entity.QTheme;

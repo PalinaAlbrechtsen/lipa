@@ -1,4 +1,4 @@
-package by.kosha.dao;
+package by.kosha.dao.implementation;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

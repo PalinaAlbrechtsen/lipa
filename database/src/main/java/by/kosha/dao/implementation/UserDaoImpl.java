@@ -1,6 +1,5 @@
 package by.kosha.dao.implementation;
 
-import by.kosha.dao.SessionBase;
 import by.kosha.dao.logic.UserDao;
 import by.kosha.entity.QSubscriber;
 import by.kosha.entity.QUser;

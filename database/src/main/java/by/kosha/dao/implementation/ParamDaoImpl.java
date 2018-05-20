@@ -1,6 +1,5 @@
 package by.kosha.dao.implementation;
 
-import by.kosha.dao.SessionBase;
 import by.kosha.dao.logic.ParamDao;
 import by.kosha.entity.Param;
 import by.kosha.entity.QParam;

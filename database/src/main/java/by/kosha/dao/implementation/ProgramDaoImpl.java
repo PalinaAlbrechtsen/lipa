@@ -1,6 +1,5 @@
 package by.kosha.dao.implementation;
 
-import by.kosha.dao.SessionBase;
 import by.kosha.dao.logic.ProgramDao;
 import by.kosha.entity.Program;
 import by.kosha.entity.Program_;
@@ -31,11 +30,11 @@ public final class ProgramDaoImpl extends BaseDaoImpl<Integer, Program> implemen
             Root<Program> root = criteriaQuery.from(Program.class);
 
             criteriaQuery.select(root)
-                    .where(criteriaBuilder.and(criteriaBuilder.like(root.get(Program_.name), name),
-                            criteriaBuilder.like(root.get(Program_.description), description),
+                    .where(criteriaBuilder.and(criteriaBuilder.like(root.get(Program_.name), '%' + name + '%'),
+                            criteriaBuilder.like(root.get(Program_.description), '%' + description + '%'),
                             criteriaBuilder.between(root.get(Program_.price), minValue, maxValue)));
 
-            return session.createQuery(criteriaQuery).setFirstResult(offset).setMaxResults(limit).list();
+            return session.createQuery(criteriaQuery).setMaxResults(limit).setFirstResult(offset).list();
         }
     }
 
