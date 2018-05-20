@@ -12,9 +12,9 @@ import java.io.Serializable;
 @Getter
 @Setter
 @MappedSuperclass
-public abstract class IdBase<T extends Serializable> {
+public abstract class IdBase<PK extends Serializable> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private T id;
+    private PK id;
 }

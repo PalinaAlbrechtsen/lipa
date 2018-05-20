@@ -1,6 +1,6 @@
 package by.kosha.service;
 
-import by.kosha.dao.CountryDao;
+import by.kosha.dao.implementation.CountryDaoImpl;
 import by.kosha.entity.Country;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ public final class CountryService {
     private static final CountryService INSTANCE = new CountryService();
 
     public Country getById(Long id) {
-        return CountryDao.getInstance().getById(id);
+        return CountryDaoImpl.getInstance().getById(id);
     }
 
     public static CountryService getInstance() {

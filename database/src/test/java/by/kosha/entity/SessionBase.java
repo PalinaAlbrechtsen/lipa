@@ -39,7 +39,6 @@ public abstract class SessionBase {
             Serializable savedEntity = session.save(entity);
             assertNotNull("Fail!", savedEntity);
             T foundEntity = (T) session.find(aClass, savedEntity);
-            System.out.println(foundEntity);
         }
     }
 

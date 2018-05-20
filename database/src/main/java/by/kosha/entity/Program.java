@@ -35,7 +35,7 @@ public class Program extends IdBase<Integer> {
     @OneToMany(mappedBy = "program")
     private Set<Purchase> purchases = new HashSet<>();
 
-    public Program(String name, BigDecimal price, String description) {
+    public Program(String name, String description, BigDecimal price) {
         this.name = name;
         this.price = price;
         this.description = description;
