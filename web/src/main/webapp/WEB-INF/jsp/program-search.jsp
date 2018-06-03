@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
-  Created by IntelliJ IDEA.
+  Created bye IntelliJ IDEA.
   User: Tom
   Date: 19.05.2018
   Time: 20:08
@@ -12,7 +12,7 @@
     <title>Programs</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/searchProgram" method="post">
+<form action="${pageContext.request.contextPath}/searchingProgram" method="post">
     Name: <br>
     <input type="text" name="name"> <br>
     Description: <br>
@@ -21,7 +21,6 @@
     from <input type="text" name="from">
     to <input type="text" name="to"> <br>
 
-    offset <input type="text" name="offset">
     limit <input type="text" name="limit">
     <input type="submit" value="Search"/>
 </form>
