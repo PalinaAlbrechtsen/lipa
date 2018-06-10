@@ -6,6 +6,6 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import(AppConfiguration.class)
-@ComponentScan(basePackages = {"bye.kosha.serviceImpl", "bye.kosha.converter"})
-public class ServiceConfiguration {
+@ComponentScan(basePackages = "bye.kosha")
+public class TestConfiguration {
 }

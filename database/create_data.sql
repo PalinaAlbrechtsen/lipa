@@ -67,4 +67,4 @@ CREATE TABLE subtopic (
   theme_id INTEGER REFERENCES theme (id)
 );
 
-INSERT INTO country (name) values ('Belarus');
+INSERT INTO program (name, description, price) VALUES ('first', 'description', '21.4');

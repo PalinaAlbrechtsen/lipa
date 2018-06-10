@@ -1,17 +1,17 @@
 package bye.kosha.util;
 
-import bye.kosha.dao.entity.Address;
-import bye.kosha.dao.entity.City;
-import bye.kosha.dao.entity.Country;
-import bye.kosha.dao.entity.Gender;
-import bye.kosha.dao.entity.Param;
-import bye.kosha.dao.entity.Program;
-import bye.kosha.dao.entity.Purchase;
-import bye.kosha.dao.entity.Role;
-import bye.kosha.dao.entity.Subscriber;
-import bye.kosha.dao.entity.Subtopic;
-import bye.kosha.dao.entity.Theme;
-import bye.kosha.dao.entity.User;
+import bye.kosha.entity.Address;
+import bye.kosha.entity.City;
+import bye.kosha.entity.Country;
+import bye.kosha.entity.Gender;
+import bye.kosha.entity.Param;
+import bye.kosha.entity.Program;
+import bye.kosha.entity.Purchase;
+import bye.kosha.entity.Role;
+import bye.kosha.entity.Subscriber;
+import bye.kosha.entity.Subtopic;
+import bye.kosha.entity.Theme;
+import bye.kosha.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -100,15 +100,6 @@ public class DataUtil {
 
         entityManager.persist(new Subtopic("First subtopic", "First text", themeOne));
         entityManager.persist(new Subtopic("Second subtopic", "Second text", themeOne));
-//
-//        entityManager.persist(new Movie("Gran Torino", 2008, Genre.DRAMA, eastwoodDirector));
-//        entityManager.persist(new Movie("Million Dollar Baby", 2004, Genre.DRAMA, eastwoodDirector));
-//        entityManager.persist(new Movie("Mystic River", 2003, Genre.THRILLER, eastwoodDirector));
-//
-//        entityManager.persist(new Movie("Gladiator", 2000, Genre.ACTION, scottDirector));
-//        entityManager.persist(new Movie("Alien", 1979, Genre.HORROR, scottDirector));
-//        entityManager.persist(new Movie("The Martian", 2015, Genre.COMEDY, scottDirector));
-//        entityManager.persist(new Movie("Blade Runner", 1982, Genre.SCIENCE_FICTION, scottDirector));
 
         entityManager.getTransaction().commit();
         entityManager.close();
