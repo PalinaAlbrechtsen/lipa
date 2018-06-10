@@ -15,7 +15,7 @@ public class PurchaseTest extends SessionBase {
             LocalDate.now(),
             Gender.MALE,
             new Address(1L, 1L));
-    private Program program = new Program("Blow mind", new BigDecimal("20.00"), "The best program");
+    private Program program = new Program("Blow mind", "The best program", new BigDecimal("20.00"));
     private Purchase purchase = new Purchase(LocalDate.now(), subscriber, program);
 
     @Before

@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 public class ProgramTest extends SessionBase {
 
-    private Program program = new Program("Blow mind", new BigDecimal("20.00"), "The best program");
+    private Program program = new Program("Blow mind", "The best program", new BigDecimal("20.00"));
 
     @Before
     public void clean() {
